@@ -24,6 +24,9 @@
             this.btnExpense = new System.Windows.Forms.Button();
             this.lstHistory = new System.Windows.Forms.ListBox();
             this.lblFIO = new System.Windows.Forms.Label();
+            this.cmbWallets = new System.Windows.Forms.ComboBox();
+            this.lblWalletBalance = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblBalance
@@ -40,7 +43,7 @@
             // txtAmount
             // 
             this.txtAmount.Location = new System.Drawing.Point(21, 62);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(4);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(199, 22);
             this.txtAmount.TabIndex = 1;
@@ -48,15 +51,15 @@
             // txtDesc
             // 
             this.txtDesc.Location = new System.Drawing.Point(21, 94);
-            this.txtDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(332, 22);
             this.txtDesc.TabIndex = 2;
             // 
             // btnIncome
             // 
-            this.btnIncome.Location = new System.Drawing.Point(21, 135);
-            this.btnIncome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIncome.Location = new System.Drawing.Point(21, 247);
+            this.btnIncome.Margin = new System.Windows.Forms.Padding(4);
             this.btnIncome.Name = "btnIncome";
             this.btnIncome.Size = new System.Drawing.Size(133, 37);
             this.btnIncome.TabIndex = 3;
@@ -66,8 +69,8 @@
             // 
             // btnExpense
             // 
-            this.btnExpense.Location = new System.Drawing.Point(163, 135);
-            this.btnExpense.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExpense.Location = new System.Drawing.Point(180, 247);
+            this.btnExpense.Margin = new System.Windows.Forms.Padding(4);
             this.btnExpense.Name = "btnExpense";
             this.btnExpense.Size = new System.Drawing.Size(133, 37);
             this.btnExpense.TabIndex = 4;
@@ -79,10 +82,10 @@
             // 
             this.lstHistory.FormattingEnabled = true;
             this.lstHistory.ItemHeight = 16;
-            this.lstHistory.Location = new System.Drawing.Point(21, 185);
-            this.lstHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstHistory.Location = new System.Drawing.Point(21, 307);
+            this.lstHistory.Margin = new System.Windows.Forms.Padding(4);
             this.lstHistory.Name = "lstHistory";
-            this.lstHistory.Size = new System.Drawing.Size(465, 196);
+            this.lstHistory.Size = new System.Drawing.Size(494, 196);
             this.lstHistory.TabIndex = 5;
             // 
             // lblFIO
@@ -96,13 +99,42 @@
             this.lblFIO.TabIndex = 6;
             this.lblFIO.Text = "Жлюева Юлия Вадимовна";
             this.lblFIO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblFIO.Click += new System.EventHandler(this.lblFIO_Click);
+            // 
+            // cmbWallets
+            // 
+            this.cmbWallets.FormattingEnabled = true;
+            this.cmbWallets.Location = new System.Drawing.Point(21, 123);
+            this.cmbWallets.Name = "cmbWallets";
+            this.cmbWallets.Size = new System.Drawing.Size(121, 24);
+            this.cmbWallets.TabIndex = 7;
+            this.cmbWallets.SelectedIndexChanged += new System.EventHandler(this.cmbWallets_SelectedIndexChanged);
+            // 
+            // lblWalletBalance
+            // 
+            this.lblWalletBalance.AutoSize = true;
+            this.lblWalletBalance.Location = new System.Drawing.Point(18, 161);
+            this.lblWalletBalance.Name = "lblWalletBalance";
+            this.lblWalletBalance.Size = new System.Drawing.Size(106, 16);
+            this.lblWalletBalance.TabIndex = 8;
+            this.lblWalletBalance.Text = "Кошелек: 0 руб.";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(18, 202);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(93, 16);
+            this.lblTotal.TabIndex = 9;
+            this.lblTotal.Text = "Общее: 0 руб.";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 395);
+            this.ClientSize = new System.Drawing.Size(837, 547);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.lblWalletBalance);
+            this.Controls.Add(this.cmbWallets);
             this.Controls.Add(this.lblFIO);
             this.Controls.Add(this.lstHistory);
             this.Controls.Add(this.btnExpense);
@@ -110,7 +142,7 @@
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblBalance);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Finance Tracker v1.0";
             this.ResumeLayout(false);
@@ -127,5 +159,8 @@
         private System.Windows.Forms.Button btnExpense;
         private System.Windows.Forms.ListBox lstHistory;
         private System.Windows.Forms.Label lblFIO;
+        private System.Windows.Forms.ComboBox cmbWallets;
+        private System.Windows.Forms.Label lblWalletBalance;
+        private System.Windows.Forms.Label lblTotal;
     }
 }
